@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script>
+            function gebi(item) {
+                return document.getElementById(item);
+            }
+            function calcular() {
+                d1 = gebi("dato1"); d1Val = parseInt(d1.value)
+                d2 = gebi("dato2"); d2Val = parseInt(d2.value)
+                resul = gebi("result");
+                if (gebi("suma"),checked){
+                    result.value = d1Val + d2Val;
+                }
+                if (gebi("resta"),checked) {
+                    result.value = d1Val - d2Val;
+                }
+                if (gebi("multi"),checked) {
+                    result.value = d1Val * d2Val;
+                }
+                if (gebi("divi"),checked) {
+                    result.value = d1Val / d2Val;
+                }
+            }
+        </script>
+    </head>
+</html>

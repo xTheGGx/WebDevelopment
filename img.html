@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function gebi(item) {
+                return document.getElementById(item);
+            }
+            function cambiaImg() {
+                gebi("img1").src = "source/gatito.jpg";
+            }
+            function restImg() {
+                gebi("img1").src="source/perrito.jpg";
+            }
+        </script>
+    </head>
+    <body>
+        <img src="source/perrito.jpg" id = "img1" onMouseOver ="cambiaImg();" onClick = "restImg();" onMouseOut="restImg();">
+    </body>
+</html>

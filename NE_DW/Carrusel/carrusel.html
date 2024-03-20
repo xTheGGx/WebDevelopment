@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+    <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Carousel</title>
+        </head>
+        <body>
+            <div id="carousel">
+                <button onclick="prevSlide()">&#10094;</button>
+                <img src="img1.png" alt="Image 1">
+                <button onclick="nextSlide()">&#10095;</button>
+            </div>
+
+            <script>
+                let slideIndex = 0;
+                const slides = [
+                "img1.png",
+                "img2.png",
+                "img3.png"
+                ];
+
+                function showSlide(n) {
+                    if (n >= slides.length) {
+                        slideIndex = 0;
+                    }
+                    if (n < 0) {
+                        slideIndex = slides.length - 1;
+                    }
+                    document.querySelector("#carousel img").src = slides[slideIndex];
+                }
+
+                function nextSlide() {
+                slideIndex++;
+                showSlide(slideIndex);
+                }
+
+                function prevSlide() {
+                slideIndex--;
+                showSlide(slideIndex);
+                }
+
+                showSlide(slideIndex);
+            </script>
+
+        </body>
+    </html>

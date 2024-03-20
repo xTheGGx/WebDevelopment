@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <script>
+    function gebi(item) {
+        return document.getElementById(item);
+    }        
+    function init() {
+        cnv1 = gebi("cnv");
+        c1 = cnv1.getContext("2d"); //Es el objeto para dibujar
+    }
+    function dibujoLinea() {
+        c1.beginPath();
+        c1.moveTo(10,10);           //Moverse sin trazar
+        c1.lineTo(200,300);         //Trazar
+        c1.lineTo(400,100);
+        c1.lineTo(500,300);
+        c1.lineWidth =10;
+        c1.strokeStyle = "#0000FF"; //Formato  
+        c1.stroke();                //Retrazar todo
+    }
+    function drawArco() {
+        c1.beginPath();
+        // Use radians for angles; 0 to 2 * Math.PI for a full circle
+        c1.arc(100, 100, 50, 0, 2 * Math.PI, true);
+            //centro,radio,anginicialRadianes,angfinalRadianes,sentido(trueFalse)
+        c1.lineWidth = 5;
+        c1.strokeStyle = "orange";
+        c1.stroke();
+    }
+
+    </script>
+</head>
+
+<body>
+    <canvas id="cnv" width="600" height="400" style="border: 2px solid black;"></canvas>
+    <input type="button" value="linea" onclick="init(); dibujoLinea();" >
+    <input type="button" value="circulo" onclick="init();drawArco();">
+</body>
